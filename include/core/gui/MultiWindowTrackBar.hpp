@@ -16,7 +16,6 @@ public:
 	void add_trackbar_on_window(const std::string & _winName, const std::string & _trackbar, int min_track_val, int max_track_val);
 	void compute_all_images();
 	void autowork();
-	static MultiWindowTrackBar * global_ptr;
 	static void MultiWindowTrackBar_on_change(int, void *);
 private:
 	std::vector<std::string> winName;
@@ -25,7 +24,7 @@ private:
 	std::vector<std::vector<std::pair<int,int> > > trackbarDimensions;
 	std::vector<std::vector<int> > trackvalue;
 	std::vector<NextImage> compute_next_image;
-
+	bool ready;
 };
 
 

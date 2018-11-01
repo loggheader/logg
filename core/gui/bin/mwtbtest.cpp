@@ -30,14 +30,18 @@ void canny_filter (Mat &blurred, Mat &canny_out, const string &window)
 	cout<<window<<endl;
 	int low = getTrackbarPos("lower",window);
 	int upper = getTrackbarPos("upper",window);
-	int k = getTrackbarPos("kernel_size",window); cout<<"canny"<<k<<endl;if(k%2 == 0) k++; if(k<0) k =3;
+	int k = getTrackbarPos("kernel_size",window); 
+	cout<<"canny "<<k<<" "<<low<<" "<<upper<<" ";
+	if(k%2 == 0) k++;
+	cout<<getTrackbarPos("lower",window)<<" "<<getTrackbarPos("lower",window)<<endl;
 	Canny(blurred, canny_out, low, upper,k);
 }
 
 
 void blur_filter(Mat &img, Mat &blurred, const string &window)
 {
-	int k = getTrackbarPos("kernel_size",window); if(k %2 == 0) k++; if(k<0) k = 3;
+	int k = getTrackbarPos("kernel_size",window);
+	cout<<"blur called "<<k<<endl; if(k %2 == 0) k++; if(k<0) k = 3;
 	cvtColor(img,blurred,COLOR_BGR2GRAY);
 	cout<<k<<endl;
 	blur(blurred,blurred,Size(k,k));
