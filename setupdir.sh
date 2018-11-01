@@ -19,6 +19,7 @@ cat   <template/README.md > $1/lib/README.md
 cat   <template/README.md > $1/bin/README.md
 cat   <template/README.md > $1/doc/README.md
 cat   <template/README.md > include/$1/README.md
+cat   <template/BinMakefile > $1/bin/Makefile
 
 
 

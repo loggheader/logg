@@ -9,3 +9,5 @@ $(LIB_FILES): lib/%.o : src/%.cpp
 	g++ $(CPP_FLAGS)	 -c -o $@ $^  $(INC_FLAGS)
 clean:
 	rm lib/*.o
+binary:
+	cd bin && $(MAKE)
