@@ -15,9 +15,10 @@ ALG_MODULES  :=
 LOGG := ../../..
 CORE_MODULES := $(addprefix $(LOGG)/core/, $(addsuffix /lib, $(CORE_MODULES)) )
 ALG_MODULES := $(addprefix $(LOGG)/alg/, $(addsuffix /lib, $(ALG_MODULES)) )
-LIB_FILES := $(wildcard $(CORE_MODULES)/*.o) $(wildcard $(ALG_MODULES)/*.o)
+LIB_CORE_FILES := $(foreach dir, $(CORE_MODULES), $(wildcard $(dir)/*.o) )
+LIB_ALG_FILES := $(foreach dir, $(ALG_MODULES), $(wildcard $(dir)/*.o) )
 
-
+LIB_FILES := $(LIB_ALG_FILES) $(LIB_CORE_FILES)
 
 
 
